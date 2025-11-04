@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dwarf Mining Idle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div>
+    <h1>Dwarf Mining Idle</h1>
+    <div class="version">Milestone #1 v1.0.0</div>
+  </div>
+  <div class="chips">
+    <span class="chip">Usability</span>
+    <span class="chip">Maintainability</span>
+    <span class="chip">Responsiveness</span>
+  </div>
+</header>
+
+<div class="grid">
+  <section class="card">
+    <h2>Play</h2>
+
+    <div class="goal" id="motivation">
+      Welcome! Mine ore to upgrade your gear. Prestige to reach new planets and earn multipliers.
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="label">Ore</div><div id="ore" class="value">0</div></div>
+      <div class="stat"><div class="label">Ore/Click</div><div id="perClick" class="value">1</div></div>
+      <div class="stat"><div class="label">Planet</div><div id="planet" class="value">1</div></div>
+    </div>
+
+    <div class="mine">
+      <button id="mineBtn" class="btn">⛏️ Mine (+<span id="mineDelta">1</span>)</button>
+      <div class="kbd-tip">Press <kbd>Enter</kbd> to mine</div>
+    </div>
+
+    <div class="goal" id="nextGoal">
+      <strong>Next Goal:</strong> Reach <span id="prestigeNeed">100</span> ore to Prestige.
+    </div>
+
+    <div class="row" style="margin-top:10px">
+      <button id="prestigeBtn" class="btn btn-warn">🚀 Prestige</button>
+      <span class="muted">×<span id="multiplierPreview">1.25</span> income, resets ore</span>
+    </div>
+  </section>
+
+  <aside>
+    <details class="card" open>
+      <summary>🛒 Upgrades</summary>
+      <div class="section" id="shop">
+        <div class="row" style="margin-bottom:8px">
+          <div>
+            <div><strong>Sharpen Pickaxe</strong></div>
+            <div class="muted">+1 ore/click • Cost: <span id="upgradeCost">10</span> ore</div>
+          </div>
+          <button id="buyUpgrade" class="btn btn-good">Buy</button>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary>ℹ️ Help & Inclusivity</summary>
+      <div class="section">
+        <ul style="margin:0 0 8px 18px">
+          <li>IH1 banner explains purpose</li>
+          <li>IH2 costs on buttons</li>
+          <li>IH3 collapsible menus</li>
+          <li>IH4 familiar buttons</li>
+          <li>IH5 confirm modals</li>
+          <li>IH6 next goal banner</li>
+          <li>IH7 keyboard mining</li>
+          <li>IH8 prestige confirm</li>
+        </ul>
+        <button id="resetBtn" class="btn">Reset Save</button>
+      </div>
+    </details>
+  </aside>
+</div>
+
+<div class="footer">Progress saves locally. Demo for CS361 Milestone #1.</div>
+</div>
+
+<div class="modal" id="confirmModal">
+  <div class="box">
+    <h3>Confirm Prestige</h3>
+    <p class="muted">Prestige resets ore but boosts multiplier. Continue?</p>
+    <div class="row" style="justify-content:flex-end">
+      <button class="btn" id="cancelPrestige">Cancel</button>
+      <button class="btn btn-warn" id="confirmPrestige">Yes</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">Saved</div>
+
+<script src="script.js"></script>
+</body>
+</html>
